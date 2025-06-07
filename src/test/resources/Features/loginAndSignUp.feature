@@ -17,4 +17,4 @@ Feature: To validate the login flow and Signup flow for the user for Employee ma
     Then Verify that status code is 200
     And Get employee by id in flow
     When  I delete same employee
-    Then Verify that status code is 200
+    Then Verify that status code is 201
