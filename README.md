@@ -1,6 +1,8 @@
  Employee Management API Automation Project
 This project automates REST API testing for the Employee Management System using Java, RestAssured, TestNG, Cucumber, and Extent Reports for reporting.
 
+
+
 | Component     | Version                      | Purpose                                   |
 | ------------- | ---------------------------- | ----------------------------------------- |
 | Java          | 21 / 17                      | Core programming language                 |
@@ -30,15 +32,28 @@ Java 21 (or Java 17) installed and added to PATH
 Maven installed and added to PATH
 Jenkins installed with necessary plugins (Git, Maven, Pipeline, HTML Publisher)
 
- Endpoints Covered
-Method	Endpoint	Purpose
-POST	/signup	Create a new employee
-POST	/login	Login and generate a token
-POST	/employees	Add a new employee
-PUT	/employees/{id}	Update employee details
-GET	/employees/{id}	Fetch employee by ID
-GET	/employees	Fetch all employees
-DELETE	/employees/{id}	Delete an employee
+### 📂 Endpoints Covered
+
+| Method | Endpoint           | Purpose                  |
+|--------|--------------------|--------------------------|
+| POST   | `/signup`          | Create a new employee    |
+| POST   | `/login`           | Login and generate token |
+| POST   | `/employees`       | Add a new employee       |
+| PUT    | `/employees/{id}`  | Update employee details  |
+| GET    | `/employees/{id}`  | Fetch employee by ID     |
+| GET    | `/employees`       | Fetch all employees      |
+| DELETE | `/employees/{id}`  | Delete an employee       |
+
+### 📂 Endpoints Covered
+
+POST `/signup` – Create a new employee<br>
+POST `/login` – Login and generate a token<br>
+POST `/employees` – Add a new employee<br>
+PUT `/employees/{id}` – Update employee details<br>
+GET `/employees/{id}` – Fetch employee by ID<br>
+GET `/employees` – Fetch all employees<br>
+DELETE `/employees/{id}` – Delete an employee<br>
+
 
 How to Run Tests
 Clone the repository.
