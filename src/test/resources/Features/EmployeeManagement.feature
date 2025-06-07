@@ -1,25 +1,38 @@
 @EmpManagement
 Feature: To validate the bookstore by adding , updating, fetching all employees and deleting them from the store with the help of user authentication
 
-  @CRUDOperations @Sanity @SmokeTest123
+  @CRUDOperations @Sanity @SmokeTest123 @All
   Scenario:To create,update ,fetch book by id and finally delete the employee in the list of employees of a company
     Given Adding the new employee into the store after successful login of user into the system
-#    When user tries to signup the store with new credentials
-#    Then validate whether a new user is created with response code 200 and response message User created successfully after signup
-#    When user tries to login to the bookStore using the  new credentials
-#    Then validate whether the user has logged in successfully with the response code 200 and response message success
-#
-#    When user tries to create a new book in the book store using the valid token of the user
-#    Then verify whether the book is created and the response is success
-#
-#    When user tries to edit the book with the name
-#    Then verifies whether the response is 200
-#    And verify the edited book details values in response for editing name
-#
-#    When user tries to fetch the book created using the id created for that book
-#    Then verify whether the response is success
-#
-#    When user tries to delete the book added in the bookstore using the id
-#    And verify the response after deleting the book should be success
-#    When user tries to delete the book added in the bookstore using the id
-#    And verify the response after deleting the book should be notfound
+
+  @getAllEmployees @All
+  Scenario: Get all the employees list and verify that status code is 200
+    Given Get all employee list from get api call
+    Then Verify that status code is 200
+
+  @getAllEmployeeByID @All
+  Scenario: get employee by id and verify the status code of it
+    Given Get employee by id
+    Then Verify that status code is 200
+
+# Delete employee for different cases
+  @deleteEmployeeByID @All
+  Scenario: Delete an employee for given empID
+    Given generate a four digit random employee id
+    Given Add an employee for a given employee ID
+    When  I delete same employee
+    Then Verify that status code is 200
+
+    # Negative test case when user try to delete for non existing employee id's
+  @deleteNonExistingEmployeeByID @All
+  Scenario: Delete an employee for given empID
+    Given generate a four digit random employee id
+    When  I delete same employee
+    Then Verify that status code is 404
+
+  @updateEmployeeDetails @All
+  Scenario: update employee details and verify that employee details has been updated successfully
+    Given generate a four digit random employee id
+    When  Add an employee for a given employee ID
+    And I update employee details using put api call
+    Then Verify that status code is 200
